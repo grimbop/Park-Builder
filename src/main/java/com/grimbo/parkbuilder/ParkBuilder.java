@@ -1,7 +1,9 @@
 package com.grimbo.parkbuilder;
 
+import com.grimbo.parkbuilder.block.ModBlocks;
 import com.grimbo.parkbuilder.entity.ModEntityTypes;
 import com.grimbo.parkbuilder.entity.VelociraptorEntity;
+import com.grimbo.parkbuilder.item.ModItems;
 import com.grimbo.parkbuilder.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -38,6 +40,8 @@ public class ParkBuilder
         Registration.register();
         eventBus.addListener(this::doClientStuff);
         ModEntityTypes.ENTITY_TYPES.register(eventBus);
+        ModBlocks.register();
+        ModItems.register();
         MinecraftForge.EVENT_BUS.register(this);
         GeckoLib.initialize();
 
